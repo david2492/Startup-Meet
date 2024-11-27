@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Meet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Startup Meet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#policies">Políticas</a></li>
+                    <li class="nav-item"><a class="btn btn-light" href="./html/registro.html">Registro</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light ms-2" href="./html/login.html">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de inicio -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Bienvenido a Startup Meet</h1>
+            <p class="lead">Una plataforma para conectar emprendedores, inversores y mentores.</p>
+            <a href="./html/registro.html" class="btn btn-light">Únete ahora</a>
+        </div>
+    </header>
+
+    <!-- Sección Acerca de -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2>Acerca de Startup Meet</h2>
+            <p>Startup Meet es una plataforma innovadora diseñada para conectar emprendedores, inversores y mentores con el objetivo de transformar ideas visionarias en proyectos exitosos. En un mundo donde las ideas frescas y creativas están surgiendo constantemente, Startup Meet ofrece un espacio para que los emprendedores encuentren el apoyo, financiamiento y orientación que necesitan para hacer realidad sus sueños.</p>
+            <h2>Objetivo de Startup Meet</h2>
+            <p>Startup Meet tiene como objetivo conectar a emprendedores innovadores con inversores y mentores para facilitar el crecimiento y desarrollo de startups. La plataforma ofrece un espacio donde los emprendedores pueden presentar sus proyectos, obtener financiamiento y recibir orientación estratégica, mientras que los inversores y mentores tienen la oportunidad de descubrir nuevas ideas, apoyar el crecimiento de las startups y formar parte de un ecosistema emprendedor en constante evolución. En resumen, Startup Meet busca acelerar el éxito de las startups a través de la colaboración y el apoyo mutuo entre emprendedores, inversores y mentores.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Registro -->
+    <section id="register" class="py-5 bg-light">
+        <div class="container">
+            <h2>Registro</h2>
+            <p>Selecciona tu rol para comenzar:</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="./html/login.html"><button class="btn btn-primary w-100">Emprendedor</button></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="./html/login.html"><button class="btn btn-secondary w-100">Inversor</button></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="./html/login.html"><button class="btn btn-success w-100">Mentor</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Tablero -->
+    <section id="dashboard" class="py-5">
+        <div class="container">
+            <h2>Tablero</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Subir Ideas</h5>
+                            <p class="card-text">Presenta tu idea de startup para atraer inversores.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Buscar Inversores</h5>
+                            <p class="card-text">Encuentra inversores por industria y ubicación.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Solicitar Mentoría</h5>
+                            <p class="card-text">Conéctate con mentores para guiar tu startup.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Políticas -->
+    <section id="policies" class="py-5 bg-light">
+        <div class="container mt-4">
+            <h1>Detalles de Políticas Gubernamentales</h1>
+            <div class="mb-3">
+                <label for="stateSelect" class="form-label">Seleccionar Departamento</label>
+                <select id="stateSelect" class="form-select">
+                    <option value="">Selecciona un Departamento</option>
+                    <option value="nariño">Nariño</option>
+                    <option value="cauca">Cauca</option>
+                    <option value="valle">Valle del Cauca</option>
+                    <!-- Agrega más estados según sea necesario -->
+                </select>
+            </div>
+    
+            <div id="policyDetails" class="policy-details">
+                <h3 id="policyTitle"></h3>
+                <p id="policyDescription"></p>
+                <h5>Préstamos disponibles</h5>
+                <ul id="loanList"></ul>
+                <button id="applyPolicyButton" class="btn btn-success">Aplicar a esta política</button>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <h1>Zona de Reuniones Virtuales</h1>
+    
+            <div class="mb-3">
+                <label for="meetingTitle" class="form-label">Título de la Reunión</label>
+                <input type="text" id="meetingTitle" class="form-control" placeholder="Ingresa el título de la reunión" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="meetingDate" class="form-label">Fecha de la Reunión</label>
+                <input type="date" id="meetingDate" class="form-control" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="meetingTime" class="form-label">Hora de la Reunión</label>
+                <input type="time" id="meetingTime" class="form-control" required>
+            </div>
+    
+            <button id="scheduleMeetingButton" class="btn btn-primary">Agendar Reunión</button>
+    
+            <div id="meetingDetails" class="meeting-details">
+                <h3>Reunión Agendada: <span id="meetingTitleDisplay"></span></h3>
+                <p><strong>Fecha:</strong> <span id="meetingDateDisplay"></span></p>
+                <p><strong>Hora:</strong> <span id="meetingTimeDisplay"></span></p>
+                <a id="meetingLink" class="btn btn-info" href="#" target="_blank">Unirse a la reunión</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="text-center py-3 bg-dark text-white">
+        <p>&copy; 2024 Startup Meet. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="./js/gubernamentales.js"></script>
+    <script src="./js/zona.js"></script>
+
+</body>
+</html>

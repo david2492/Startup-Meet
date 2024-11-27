@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero del Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="dashboard" class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <h3>Menú</h3>
+                    <a href="#" class="list-group-item list-group-item-action" id="profileLink">Perfil</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="ideaLink">Subir Ideas</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="investorLink">Ver Inversores</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="politicsLink">Políticas Relevantes</a>
+                    <a href="#" class="list-group-item list-group-item-action" id="mentorLink">Solicitar Mentoría</a>
+                    <a href="../index.html" class="list-group-item list-group-item-action" id="logoutLink">Cerrar Sesión</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div id="content">
+                    <h2>Bienvenido al Tablero del Usuario</h2>
+                    <p id="userGreeting">Cargando...</p>
+                    <div id="dynamicContent"></div>
+
+                    <!-- Formulario para Subir Ideas -->
+                    <div id="ideaForm" style="display: none;">
+                        <h3>Subir una Idea</h3>
+                        <form id="submitIdeaForm">
+                            <div class="mb-3">
+                                <label for="ideaTitle" class="form-label">Título de la Idea</label>
+                                <input type="text" class="form-control" id="ideaTitle" placeholder="Ingresa el título de tu idea" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ideaDescription" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="ideaDescription" rows="4" placeholder="Describe tu idea" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Idea</button>
+                            <button type="button" class="btn btn-secondary" id="cancelIdeaButton">Cancelar</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario para Ver Inversores -->
+                    <div id="investorForm" style="display: none;">
+                        <h3>Inversores Disponibles</h3>
+                        <ul id="investorList" class="list-group">
+                            <!-- Aquí se llenará dinámicamente con la lista de inversores -->
+                        </ul>
+                        <button type="button" class="btn btn-secondary" id="cancelInvestorButton">Cancelar</button>
+                    </div>
+
+                    <!-- Formulario para Políticas Relevantes -->
+                    <div id="politicsForm" style="display: none;">
+                        <h3>Políticas Relevantes</h3>
+                        <form id="politicsFormInput">
+                            <div class="mb-3">
+                                <label for="policyTitle" class="form-label">Título de la Política</label>
+                                <input type="text" class="form-control" id="policyTitle" placeholder="Ingresa el título de la política" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="policyDescription" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="policyDescription" rows="4" placeholder="Describe la política relevante" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Política</button>
+                            <button type="button" class="btn btn-secondary" id="cancelPoliticsButton">Cancelar</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario de Solicitar Mentoría -->
+                    <div id="mentorForm" style="display: none;">
+                        <h3>Solicitar Mentoría</h3>
+                        <form id="mentorRequestForm">
+                            <div class="mb-3">
+                                <label for="mentorName" class="form-label">Nombre del Mentor</label>
+                                <input type="text" class="form-control" id="mentorName" placeholder="Ingresa el nombre del mentor" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mentorDate" class="form-label">Fecha</label>
+                                <input type="date" class="form-control" id="mentorDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mentorTime" class="form-label">Hora</label>
+                                <input type="time" class="form-control" id="mentorTime" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mentorTopic" class="form-label">Tema a Tratar</label>
+                                <textarea class="form-control" id="mentorTopic" rows="4" placeholder="Describe el tema que quieres tratar" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                            <button type="button" class="btn btn-secondary" id="cancelMentorButton">Cancelar</button>
+                        </form>
+                    </div>
+
+                    <!-- Popup para mostrar resumen de los datos enviados -->
+                    <div id="submissionPopup" class="modal fade" tabindex="-1" aria-labelledby="submissionPopupLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="submissionPopupLabel">Resumen de Envío</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="popupBody">
+                                    <!-- Aquí se mostrará el resumen del formulario enviado -->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>
