@@ -11,3 +11,19 @@ header {
 footer {
     font-size: 0.9rem;
 }
+
+
+/* Asegura que los íconos sean más grandes y centrados */
+.fas {
+    
+    font-size: 150px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 26px;
+    margin-top: 26px;
+}
+
+.col-md-4 {
+    text-align: center;
+}
+/* Opcional: Para centrar los botones dentro de las columnas */

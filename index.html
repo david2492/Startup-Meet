@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup Meet</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+    
 </head>
 <body>
     <!-- Barra de navegación -->
@@ -47,17 +49,20 @@
 
     <!-- Sección de Registro -->
     <section id="register" class="py-5 bg-light">
-        <div class="container">
+        <div class="container-lg container-register">
             <h2>Registro</h2>
             <p>Selecciona tu rol para comenzar:</p>
             <div class="row">
                 <div class="col-md-4">
+                    <i class="fas fa-lightbulb"></i>
                     <a href="./html/login.html"><button class="btn btn-primary w-100">Emprendedor</button></a>
                 </div>
                 <div class="col-md-4">
+                    <i class="fas fa-dollar-sign"></i>
                     <a href="./html/login.html"><button class="btn btn-secondary w-100">Inversor</button></a>
                 </div>
                 <div class="col-md-4">
+                    <i class="fas fa-chalkboard-teacher"></i>
                     <a href="./html/login.html"><button class="btn btn-success w-100">Mentor</button></a>
                 </div>
             </div>
@@ -67,29 +72,46 @@
     <!-- Sección de Tablero -->
     <section id="dashboard" class="py-5">
         <div class="container">
-            <h2>Tablero</h2>
+            <h2>Sección de búsqueda y filtros</h2>
             <div class="row">
+                <!-- Tarjeta de Inversores con filtro -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Subir Ideas</h5>
-                            <p class="card-text">Presenta tu idea de startup para atraer inversores.</p>
+                            <h5 class="card-title">Inversores por Industria y Ubicación</h5>
+                            <input type="text" id="investors-search" class="form-control mb-3" placeholder="Buscar inversores...">
+                            <ul id="investors-list" class="list-group">
+                                <!-- Lista de inversores cargada dinámicamente -->
+                                <li class="list-group-item">Cargando inversores...</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+    
+                <!-- Tarjeta de Proyectos con filtro -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Buscar Inversores</h5>
-                            <p class="card-text">Encuentra inversores por industria y ubicación.</p>
+                            <h5 class="card-title">Proyectos según Fase de Implementación</h5>
+                            <input type="text" id="projects-search" class="form-control mb-3" placeholder="Buscar proyectos...">
+                            <ul id="projects-list" class="list-group">
+                                <!-- Lista de proyectos cargada dinámicamente -->
+                                <li class="list-group-item">Cargando proyectos...</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+    
+                <!-- Tarjeta de Mentores con filtro -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Solicitar Mentoría</h5>
-                            <p class="card-text">Conéctate con mentores para guiar tu startup.</p>
+                            <h5 class="card-title">Mentores Especializados en Áreas Específicas</h5>
+                            <input type="text" id="mentors-search" class="form-control mb-3" placeholder="Buscar mentores...">
+                            <ul id="mentors-list" class="list-group">
+                                <!-- Lista de mentores cargada dinámicamente -->
+                                <li class="list-group-item">Cargando mentores...</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -158,6 +180,8 @@
     <script src="script.js"></script>
     <script src="./js/gubernamentales.js"></script>
     <script src="./js/zona.js"></script>
+    <script src="./js/lista.js"></script>
+
 
 </body>
 </html>
